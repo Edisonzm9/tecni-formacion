@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TecniFormacionLogo, FacebookIcon, InstagramIcon, TikTokIcon, MailIcon, PhoneIcon, MapPinIcon } from './Icons';
+import { FacebookIcon, InstagramIcon, MailIcon, PhoneIcon, MapPinIcon } from './Icons';
 import { COMPANY_INFO } from '../constants';
 
 const Footer: React.FC = () => {

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_INFO, COURSES, GALLERY_IMAGES } from '../constants';
-import { BoltIcon, WrenchScrewdriverIcon, AcademicCapIcon, UsersIcon, PresentationChartLineIcon, ClipboardDocumentCheckIcon, CalendarDaysIcon, ArrowRightIcon, ClockIcon, HashtagIcon, ChevronLeftIcon, ChevronRightIcon, XMarkIcon, MailIcon, PhoneIcon, HandshakeIcon, SparklesIcon, GlobeAltIcon, ScaleIcon, LightBulbIcon, ArrowTrendingUpIcon } from './Icons';
+import { BoltIcon, WrenchScrewdriverIcon, AcademicCapIcon, UsersIcon, PresentationChartLineIcon, ClipboardDocumentCheckIcon, CalendarDaysIcon, ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon, XMarkIcon, HandshakeIcon, SparklesIcon, GlobeAltIcon, ScaleIcon, LightBulbIcon, ArrowTrendingUpIcon } from './Icons';
 import CourseCard from './CourseCard';
 
 // Hook for scroll animations
@@ -548,86 +548,7 @@ const GallerySection = () => {
     );
 };
 
-// Sección de Contacto
-const ContactSection = () => {
-    const { contact } = COMPANY_INFO;
-    
-    const contactInfo = [
-        { icon: <ClockIcon className="w-6 h-6 text-blue-500" />, title: "Horarios", value: "Lunes a Viernes: 8:00 AM - 6:00 PM" },
-        { icon: <HashtagIcon className="w-6 h-6 text-blue-500" />, title: "Ubicación", value: contact.address },
-        { icon: <MailIcon className="w-6 h-6 text-blue-500" />, title: "Email", value: contact.email, href: `mailto:${contact.email}` },
-        { icon: <PhoneIcon className="w-6 h-6 text-blue-500" />, title: "Teléfono", value: contact.phone, href: `tel:${contact.whatsapp}` },
-    ];
 
-    return (
-        <section id="contact" className="py-20 bg-slate-800 text-white">
-            <div className="container mx-auto px-6">
-                <AnimatedSection>
-                    <h2 className="section-title text-white">Contáctanos</h2>
-                    <p className="section-subtitle text-slate-300">Estamos aquí para responder tus preguntas y ayudarte a comenzar tu formación profesional.</p>
-                </AnimatedSection>
-
-                <div className="grid lg:grid-cols-2 gap-12 mt-12">
-                    {/* Información de Contacto */}
-                    <div className="space-y-8">
-                        <div className="grid sm:grid-cols-2 gap-6">
-                            {contactInfo.map((item, index) => (
-                                <AnimatedSection key={item.title} delay={`${index * 100}ms`}>
-                                    <div className="bg-slate-700 p-6 rounded-xl hover:bg-slate-600 transition-colors duration-300">
-                                        <div className="flex items-start gap-4">
-                                            <div className="flex-shrink-0 bg-blue-500/20 rounded-full p-3">
-                                                {item.icon}
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
-                                                {item.href ? (
-                                                    <a href={item.href} className="text-slate-300 hover:text-blue-400 transition-colors">
-                                                        {item.value}
-                                                    </a>
-                                                ) : (
-                                                    <p className="text-slate-300">{item.value}</p>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </AnimatedSection>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Formulario de Contacto */}
-                    <AnimatedSection delay="200ms">
-                        <div className="bg-slate-700 p-8 rounded-xl">
-                            <h3 className="text-2xl font-bold mb-6">Envíanos un Mensaje</h3>
-                            <form className="space-y-6">
-                                <div className="grid sm:grid-cols-2 gap-6">
-                                    <input 
-                                        type="text" 
-                                        placeholder="Tu nombre" 
-                                        className="w-full px-4 py-3 bg-slate-600 border border-slate-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-white placeholder-slate-400" 
-                                    />
-                                    <input 
-                                        type="email" 
-                                        placeholder="Tu email" 
-                                        className="w-full px-4 py-3 bg-slate-600 border border-slate-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-white placeholder-slate-400" 
-                                    />
-                                </div>
-                                <textarea 
-                                    rows={4} 
-                                    placeholder="Tu mensaje" 
-                                    className="w-full px-4 py-3 bg-slate-600 border border-slate-500 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-white placeholder-slate-400 resize-none" 
-                                ></textarea>
-                                <Link to="/contact" className="btn-primary w-full text-center">
-                                    Enviar Mensaje
-                                </Link>
-                            </form>
-                        </div>
-                    </AnimatedSection>
-                </div>
-            </div>
-        </section>
-    );
-};
 
 const Home: React.FC = () => {
     useSmoothScroll();
