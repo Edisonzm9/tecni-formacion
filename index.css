@@ -121,13 +121,12 @@
     border: 2px solid white;
 }
 
-/* Estilos mejorados para los botones */
+/* Botones Modernos y Elegantes */
 .cta-button {
-    @apply inline-block font-bold py-4 px-8 rounded-full uppercase tracking-wider shadow-lg transform transition-all duration-300;
-    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold rounded-2xl shadow-lg transform transition-all duration-300;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     color: white;
-    @apply hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300;
-    border: none;
+    border: 2px solid transparent;
     position: relative;
     overflow: hidden;
 }
@@ -139,8 +138,14 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.3);
+    border-color: #475569;
 }
 
 .cta-button:hover::before {
@@ -148,11 +153,10 @@
 }
 
 .cta-button-secondary {
-    @apply inline-block font-bold py-4 px-8 rounded-full uppercase tracking-wider shadow-lg transform transition-all duration-300;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    @apply hover:scale-105 hover:shadow-xl hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-blue-200;
-    border: none;
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold rounded-2xl shadow-lg transform transition-all duration-300;
+    background: white;
+    color: #1e293b;
+    border: 2px solid #e2e8f0;
     position: relative;
     overflow: hidden;
 }
@@ -164,11 +168,147 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
+    background: linear-gradient(90deg, transparent, rgba(30, 41, 59, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button-secondary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #1e293b;
+    background: #1e293b;
+    color: white;
 }
 
 .cta-button-secondary:hover::before {
+    left: 100%;
+}
+
+/* Botón de Acción Principal */
+.btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold rounded-2xl shadow-lg transform transition-all duration-300;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.3);
+    border-color: #ea580c;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Botón Secundario Moderno */
+.btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold rounded-2xl shadow-lg transform transition-all duration-300;
+    background: white;
+    color: #f97316;
+    border: 2px solid #f97316;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+    background: #f97316;
+    color: white;
+}
+
+.btn-secondary:hover::before {
+    left: 100%;
+}
+
+/* Botón Outline Elegante */
+.btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold rounded-2xl transform transition-all duration-300;
+    background: transparent;
+    color: #1e293b;
+    border: 2px solid #1e293b;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(30, 41, 59, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-outline:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(30, 41, 59, 0.1);
+    background: #1e293b;
+    color: white;
+}
+
+.btn-outline:hover::before {
+    left: 100%;
+}
+
+/* Botón con Efecto Glassmorphism */
+.btn-glass {
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold rounded-2xl transform transition-all duration-300;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-glass:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-glass:hover::before {
     left: 100%;
 }
 
@@ -408,5 +548,166 @@
     .scroll-nav button {
         width: 2.5rem;
         height: 2.5rem;
+    }
+}
+
+/* Estilos para tarjetas de cursos con imagen en 1/3 superior */
+.course-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    background: white;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.course-card .image-section {
+    position: relative;
+    height: 33.333%;
+    overflow: hidden;
+}
+
+.course-card .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.7s ease;
+}
+
+.course-card:hover .background-image {
+    transform: scale(1.1);
+}
+
+.course-card .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.course-card .title-overlay {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.course-card .title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.course-card .content-section {
+    padding: 1.5rem;
+    height: 66.667%;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card .category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+.course-card .description {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.course-card .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.course-card .info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.course-card .info-icon {
+    width: 1rem;
+    height: 1rem;
+    color: #3b82f6;
+}
+
+.course-card .action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.course-card .action-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.course-card .action-button .icon {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.course-card .action-button:hover .icon {
+    transform: translateX(0.25rem);
+}
+
+/* Responsive para tarjetas de cursos */
+@media (max-width: 768px) {
+    .course-card {
+        height: 380px;
+    }
+    
+    .course-card .content-section {
+        padding: 1rem;
+    }
+    
+    .course-card .title {
+        font-size: 1rem;
+    }
+    
+    .course-card .description {
+        font-size: 0.8rem;
     }
 } 

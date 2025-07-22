@@ -8,10 +8,10 @@ const Footer: React.FC = () => {
 
     const quickLinks = [
         { name: 'Inicio', path: '/' },
-        { name: 'Sobre Nosotros', path: '/about' },
-        { name: 'Cursos', path: '/courses' },
-        { name: 'Galería', path: '/gallery' },
-        { name: 'Contacto', path: '/contact' },
+        { name: 'Sobre Nosotros', path: '/#about' },
+        { name: 'Cursos', path: '/#courses' },
+        { name: 'Galería', path: '/#gallery' },
+        { name: 'Contacto', path: '/#contact' },
     ];
     
     const socialLinks = [

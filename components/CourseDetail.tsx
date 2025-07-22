@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { COURSES } from '../constants';
+import { COURSES, COURSE_BACKGROUND_IMAGES } from '../constants';
 import { Course, Module } from '../types';
 import { ChevronDownIcon, ClockIcon, HashtagIcon, UserCircleIcon, CalendarDaysIcon, PresentationChartLineIcon } from './Icons';
 
@@ -35,6 +35,16 @@ const CourseDetail: React.FC = () => {
     const course = COURSES.find(c => c.id === courseId);
     const [openAccordion, setOpenAccordion] = useState<string | null>(course?.curriculum[0]?.title ?? null);
     const navigate = useNavigate();
+
+    const getBackgroundImage = (courseArea: string) => {
+        const images = COURSE_BACKGROUND_IMAGES[courseArea as keyof typeof COURSE_BACKGROUND_IMAGES];
+        if (images && images.length > 0) {
+            // Seleccionar una imagen aleatoria de la categoría
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+        return '/assets/gallery/p1.jpg'; // Imagen por defecto
+    };
 
     const handleAccordionClick = (title: string) => {
         setOpenAccordion(openAccordion === title ? null : title);
@@ -80,11 +90,21 @@ const CourseDetail: React.FC = () => {
 
     return (
         <div>
-            <div className="bg-slate-800 text-white pt-32 pb-20 bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:24px_24px]">
-                <div className="container mx-auto px-6">
+            <div className="relative text-white pt-32 pb-20 overflow-hidden">
+                {/* Imagen de Fondo */}
+                <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${getBackgroundImage(course.area)})` }}
+                />
+                
+                {/* Overlay Gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-slate-900/90" />
+                
+                {/* Contenido */}
+                <div className="relative z-10 container mx-auto px-6">
                     <p className="font-semibold text-blue-400 mb-2 tracking-widest uppercase">{course.area}</p>
                     <h1 className="text-4xl md:text-5xl font-black mb-4">{course.commercialName}</h1>
-                    <p className="text-lg text-slate-300 max-w-3xl">{course.details.focus}</p>
+                    <p className="text-lg text-slate-200 max-w-3xl">{course.details.focus}</p>
                 </div>
             </div>
 

@@ -195,61 +195,178 @@ export const COURSES: Course[] = [
 export const GALLERY_IMAGES = [
   {
     id: '1',
-    src: '/assets/gallery/course-1.jpg',
-    alt: 'Curso de Electricidad Residencial',
+    src: '/assets/gallery/p1.jpg',
+    alt: 'Electricidad Residencial',
     title: 'Electricidad Residencial',
-    description: 'Instalación y mantenimiento seguro de sistemas eléctricos domiciliarios'
+    description: 'Instalación y mantenimiento seguro de sistemas eléctricos domiciliarios',
+    category: 'Eléctrica'
   },
   {
     id: '2',
-    src: '/assets/gallery/course-2.jpg',
-    alt: 'Curso de Luminotecnia',
+    src: '/assets/gallery/p2.jpg',
+    alt: 'Luminotecnia y Variables Eléctricas',
     title: 'Luminotecnia y Variables Eléctricas',
-    description: 'Uso industrial y artístico del sistema de alumbrado'
+    description: 'Uso industrial y artístico del sistema de alumbrado',
+    category: 'Eléctrica'
   },
   {
     id: '3',
-    src: '/assets/gallery/course-3.jpg',
+    src: '/assets/gallery/p3.jpg',
     alt: 'Redes Eléctricas - Liniero',
     title: 'Redes Eléctricas - Liniero',
-    description: 'Formación práctica en redes eléctricas de baja y media tensión'
+    description: 'Formación práctica en redes eléctricas de baja y media tensión',
+    category: 'Eléctrica'
   },
   {
     id: '4',
-    src: '/assets/gallery/course-4.jpg',
+    src: '/assets/gallery/p4.jpg',
     alt: 'Sistemas Automatizados',
     title: 'Sistemas Automatizados',
-    description: 'Diseño e implementación de sistemas de automatización industrial'
+    description: 'Diseño e implementación de sistemas de automatización industrial',
+    category: 'Automatización'
   },
   {
     id: '5',
-    src: '/assets/gallery/course-5.jpg',
+    src: '/assets/gallery/p5.jpg',
     alt: 'Arquitectura del Aprendizaje',
     title: 'Arquitectura del Aprendizaje',
-    description: 'Diseño de programas educativos de alto impacto'
+    description: 'Diseño de programas educativos de alto impacto',
+    category: 'Formación'
   },
   {
     id: '6',
-    src: '/assets/gallery/course-6.jpg',
+    src: '/assets/gallery/p6.jpg',
     alt: 'Evaluación de Competencias',
     title: 'Evaluación de Competencias',
-    description: 'Técnicas modernas de evaluación por competencias'
+    description: 'Técnicas modernas de evaluación por competencias',
+    category: 'Formación'
   },
   {
     id: '7',
-    src: '/assets/gallery/course-7.jpg',
+    src: '/assets/gallery/p7.jpg',
     alt: 'Formación de Instructores',
     title: 'Formación de Instructores',
-    description: 'Herramientas para instructores del siglo XXI'
+    description: 'Herramientas para instructores del siglo XXI',
+    category: 'Formación'
   },
   {
     id: '8',
-    src: '/assets/gallery/course-8.jpg',
+    src: '/assets/gallery/p8.jpg',
     alt: 'Diagnóstico Automotriz',
     title: 'Diagnóstico Automotriz',
-    description: 'Sistemas eléctricos y electrónicos del vehículo'
+    description: 'Sistemas eléctricos y electrónicos del vehículo',
+    category: 'Eléctrica'
+  },
+  {
+    id: '9',
+    src: '/assets/gallery/p9.jpg',
+    alt: 'Diagnóstico de Sistemas Automotrices',
+    title: 'Diagnóstico de Sistemas Automotrices',
+    description: 'Mecánica general básica para el diagnóstico y reparación',
+    category: 'Mecánica'
+  },
+  {
+    id: '10',
+    src: '/assets/gallery/p10.jpg',
+    alt: 'Técnico en Soldadura Eléctrica',
+    title: 'Técnico en Soldadura Eléctrica',
+    description: 'Dominio de técnicas de soldadura eléctrica por arco',
+    category: 'Mecánica'
+  },
+  {
+    id: '11',
+    src: '/assets/gallery/p11.jpg',
+    alt: 'Trabajo en Altura',
+    title: 'Trabajo en Altura',
+    description: 'Técnicas de ascenso y descenso seguro',
+    category: 'Eléctrica'
+  },
+  {
+    id: '12',
+    src: '/assets/gallery/p12.jpg',
+    alt: 'Instalaciones Eléctricas',
+    title: 'Instalaciones Eléctricas',
+    description: 'Instalación de redes de baja y media tensión',
+    category: 'Eléctrica'
+  },
+  {
+    id: '13',
+    src: '/assets/gallery/p13.jpg',
+    alt: 'Controladores Lógicos Programables',
+    title: 'Controladores Lógicos Programables',
+    description: 'Programación en Ladder y comunicación industrial',
+    category: 'Automatización'
+  },
+  {
+    id: '14',
+    src: '/assets/gallery/p14.jpg',
+    alt: 'Robótica Industrial',
+    title: 'Robótica Industrial',
+    description: 'Programación de robots e integración de sistemas',
+    category: 'Automatización'
+  },
+  {
+    id: '15',
+    src: '/assets/gallery/p15.jpg',
+    alt: 'Evaluación por Competencias',
+    title: 'Evaluación por Competencias',
+    description: 'Diseño de rúbricas y listas de cotejo',
+    category: 'Formación'
+  },
+  {
+    id: '16',
+    src: '/assets/gallery/p16.jpg',
+    alt: 'Tecnología Educativa',
+    title: 'Tecnología Educativa',
+    description: 'Plataformas LMS y herramientas de colaboración',
+    category: 'Formación'
+  },
+  {
+    id: '17',
+    src: '/assets/gallery/p17.jpg',
+    alt: 'Mantenimiento Industrial',
+    title: 'Mantenimiento Industrial',
+    description: 'Protocolos de mantenimiento correctivo',
+    category: 'Mecánica'
+  },
+  {
+    id: '18',
+    src: '/assets/gallery/p18.jpg',
+    alt: 'Proyectos Finales',
+    title: 'Proyectos Finales',
+    description: 'Aplicación de técnicas aprendidas en proyectos reales',
+    category: 'General'
   }
 ];
+
+// Imágenes de fondo para secciones de cursos
+export const COURSE_BACKGROUND_IMAGES = {
+  'Eléctrica': [
+    '/assets/gallery/p1.jpg',
+    '/assets/gallery/p2.jpg',
+    '/assets/gallery/p3.jpg',
+    '/assets/gallery/p8.jpg',
+    '/assets/gallery/p11.jpg',
+    '/assets/gallery/p12.jpg'
+  ],
+  'Mecánica': [
+    '/assets/gallery/p9.jpg',
+    '/assets/gallery/p10.jpg',
+    '/assets/gallery/p17.jpg'
+  ],
+  'Formación': [
+    '/assets/gallery/p5.jpg',
+    '/assets/gallery/p6.jpg',
+    '/assets/gallery/p7.jpg',
+    '/assets/gallery/p15.jpg',
+    '/assets/gallery/p16.jpg'
+  ],
+  'Automatización': [
+    '/assets/gallery/p4.jpg',
+    '/assets/gallery/p13.jpg',
+    '/assets/gallery/p14.jpg'
+  ]
+};
 
 export const COMPANY_INFO = {
   name: "TECNIFORMACIÓN S.A.S",
@@ -274,7 +391,7 @@ export const COMPANY_INFO = {
   contact: {
     address: "Cuenca, Ecuador",
     email: "tecniformacion.ec@gmail.com",
-    phone: "0960651038",
+    phone: "(+593) 0 960 6510 38",
     whatsapp: "+593960651038",
     social: {
       facebook: "https://www.facebook.com/profile.php?id=61578419601592",

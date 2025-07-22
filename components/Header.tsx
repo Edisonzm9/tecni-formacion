@@ -1,53 +1,89 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { TecniFormacionLogo, MenuIcon, CloseIcon } from './Icons';
+import { useActiveSection } from '../hooks/useActiveSection';
 
-const NavLinks = ({ isMobile, closeMenu }: { isMobile?: boolean, closeMenu?: () => void }) => {
-    const links = [
-        { name: 'Inicio', path: '/' },
-        { name: 'Sobre Nosotros', path: '/about' },
-        { name: 'Cursos', path: '/courses' },
-        { name: 'Galería', path: '/gallery' },
-        { name: 'Contacto', path: '/contact' },
+interface NavItem {
+    name: string;
+    path: string;
+    sectionId: string;
+}
+
+const NavLinks = ({ isMobile, closeMenu, activeSection, scrollToSection }: { 
+    isMobile?: boolean, 
+    closeMenu?: () => void,
+    activeSection: string,
+    scrollToSection: (sectionId: string) => void
+}) => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+    
+    const links: NavItem[] = [
+        { name: 'Inicio', path: '/', sectionId: 'home' },
+        { name: 'Sobre Nosotros', path: '/#about', sectionId: 'about' },
+        { name: 'Cursos', path: '/#courses', sectionId: 'courses' },
+        { name: 'Galería', path: '/#gallery', sectionId: 'gallery' },
+        { name: 'Contacto', path: '/#contact', sectionId: 'contact' },
     ];
 
-    const baseClasses = 'uppercase font-semibold tracking-wider transition-colors duration-300 relative group';
+    const baseClasses = 'uppercase font-semibold tracking-wider transition-all duration-300 relative group cursor-pointer';
     const mobileClasses = `block py-4 text-center text-2xl ${baseClasses}`;
     const desktopClasses = `text-sm ${baseClasses}`;
+
+    const handleNavClick = (e: React.MouseEvent, link: NavItem) => {
+        e.preventDefault();
+        
+        if (isHomePage) {
+            // Si estamos en la página de inicio, hacer scroll suave a la sección
+            scrollToSection(link.sectionId);
+        } else {
+            // Si no estamos en la página de inicio, navegar a la página y luego a la sección
+            window.location.href = link.path;
+        }
+        
+        if (closeMenu) closeMenu();
+    };
+
+    const isActive = (link: NavItem) => {
+        if (!isHomePage) return false;
+        return activeSection === link.sectionId;
+    };
 
     return (
         <>
             {links.map((link) => (
-                <NavLink
+                <div
                     key={link.name}
-                    to={link.path}
-                    onClick={closeMenu}
-                    end // Use 'end' for the home link to prevent it from being active on other routes
-                    className={({ isActive }) => 
-                        `${isMobile ? mobileClasses : desktopClasses} ${isActive ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'}`
-                    }
+                    onClick={(e) => handleNavClick(e, link)}
+                    className={`${isMobile ? mobileClasses : desktopClasses} ${
+                        isActive(link) 
+                            ? 'text-blue-600' 
+                            : 'text-slate-600 hover:text-blue-600'
+                    }`}
                 >
-                    {({ isActive }) => (
-                        <>
-                            {link.name}
-                            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform transition-transform duration-300 ease-out ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                        </>
-                    )}
-                </NavLink>
+                    {link.name}
+                    <span 
+                        className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform transition-transform duration-300 ease-out ${
+                            isActive(link) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                        }`} 
+                    />
+                </div>
             ))}
         </>
     );
 };
 
-
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const { activeSection, scrollToSection } = useActiveSection();
 
     useEffect(() => {
         const handleScroll = () => {
+            // Detectar scroll para cambiar el fondo del header
             setIsScrolled(window.scrollY > 10);
         };
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -66,11 +102,24 @@ const Header: React.FC = () => {
                        <TecniFormacionLogo />
                     </NavLink>
                     <div className="hidden lg:flex items-center space-x-8">
-                        <NavLinks isMobile={false} closeMenu={closeMenu} />
-                        <a href="#aula-virtual" className="text-sm font-semibold border-2 border-orange-500 text-orange-500 rounded-full py-2 px-6 hover:bg-orange-500 hover:text-white transition-all duration-300">Aula Virtual</a>
+                        <NavLinks 
+                            isMobile={false} 
+                            closeMenu={closeMenu} 
+                            activeSection={activeSection}
+                            scrollToSection={scrollToSection}
+                        />
+                        <a 
+                            href="#aula-virtual" 
+                            className="text-sm font-semibold border-2 border-orange-500 text-orange-500 rounded-full py-2 px-6 hover:bg-orange-500 hover:text-white transition-all duration-300"
+                        >
+                            Aula Virtual
+                        </a>
                     </div>
                     <div className="lg:hidden">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-slate-800 hover:text-blue-600 z-50 relative">
+                        <button 
+                            onClick={() => setIsOpen(!isOpen)} 
+                            className="text-slate-800 hover:text-blue-600 z-50 relative"
+                        >
                             {isOpen ? <CloseIcon className="w-8 h-8" /> : <MenuIcon className="w-8 h-8" />}
                         </button>
                     </div>
@@ -86,8 +135,19 @@ const Header: React.FC = () => {
                     className="flex flex-col items-center justify-center h-full space-y-8"
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <NavLinks isMobile closeMenu={closeMenu} />
-                    <a href="#aula-virtual" onClick={closeMenu} className="cta-button mt-6">Aula Virtual</a>
+                    <NavLinks 
+                        isMobile 
+                        closeMenu={closeMenu} 
+                        activeSection={activeSection}
+                        scrollToSection={scrollToSection}
+                    />
+                    <a 
+                        href="#aula-virtual" 
+                        onClick={closeMenu} 
+                        className="cta-button mt-6"
+                    >
+                        Aula Virtual
+                    </a>
                 </div>
             </div>
         </header>

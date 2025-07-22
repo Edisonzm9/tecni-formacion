@@ -9,7 +9,6 @@ import CoursesPage from './components/Courses';
 import CourseDetail from './components/CourseDetail';
 import Contact from './components/Contact';
 import GalleryPage from './components/GalleryPage';
-import SmoothScroll from './components/SmoothScroll';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,7 +38,6 @@ const App: React.FC = () => {
                 </main>
                 <Footer />
                 <FloatingWhatsApp />
-                <SmoothScroll />
             </div>
         </HashRouter>
     );
