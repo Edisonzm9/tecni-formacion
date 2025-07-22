@@ -103,7 +103,7 @@ const CourseDetail: React.FC = () => {
                 {/* Contenido */}
                 <div className="relative z-10 container mx-auto px-6">
                     <p className="font-semibold text-blue-400 mb-2 tracking-widest uppercase">{course.area}</p>
-                    <h1 className="text-4xl md:text-5xl font-black mb-4">{course.commercialName}</h1>
+                    <h1 className="text-4xl md:text-5xl font-black mb-4 text-white">{course.commercialName}</h1>
                     <p className="text-lg text-slate-200 max-w-3xl">{course.details.focus}</p>
                 </div>
             </div>

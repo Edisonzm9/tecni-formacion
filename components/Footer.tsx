@@ -28,7 +28,16 @@ const Footer: React.FC = () => {
                     {/* Column 1: Brand */}
                     <div className="md:col-span-2 lg:col-span-1">
                         <Link to="/" className="inline-block mb-4">
-                            <TecniFormacionLogo />
+                            <div className="flex items-center gap-3">
+                                <img 
+                                    src="/assets/logos/logo_footer.jpg" 
+                                    alt="TecniFormación Logo" 
+                                    className="w-10 h-10 object-contain"
+                                />
+                                <span className="font-heading text-xl font-black text-white">
+                                    TECNI<span className="text-blue-600">FORMACIÓN</span>
+                                </span>
+                            </div>
                         </Link>
                         <p className="text-slate-400 text-sm mt-4">{slogan}</p>
                         <div className="flex space-x-4 mt-6">
@@ -85,7 +94,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-                    <p>&copy; {new Date().getFullYear()} {name}. Todos los derechos reservados. Sitio diseñado con Tessa Studio❤️.</p>
+                    <p>&copy; {new Date().getFullYear()} {name}. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

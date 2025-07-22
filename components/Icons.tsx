@@ -3,7 +3,7 @@ import React from 'react';
 export const TecniFormacionLogo: React.FC<{ className?: string }> = ({ className }) => (
     <div className={`flex items-center gap-3 ${className}`}>
         <img 
-            src="/assets/logos/logo.jpg" 
+            src="/assets/logos/logo.png" 
             alt="TecniFormación Logo" 
             className="w-10 h-10 object-contain"
         />

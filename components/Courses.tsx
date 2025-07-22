@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Course } from '../types';
+import { useLocation } from 'react-router-dom';
 import { COURSES } from '../constants';
-import { ClockIcon, HashtagIcon, ArrowRightIcon } from './Icons';
+import CourseCard from './CourseCard';
 
 const PageHeader = ({ title, subtitle }: { title: string, subtitle:string }) => (
     <div className="bg-slate-800 py-24 text-center text-white bg-[radial-gradient(#ffffff22_1px,transparent_1px)] [background-size:24px_24px]">
@@ -13,36 +12,7 @@ const PageHeader = ({ title, subtitle }: { title: string, subtitle:string }) => 
     </div>
 );
 
-const areaColorMap: { [key: string]: string } = {
-    'Eléctrica': 'border-blue-500',
-    'Mecánica': 'border-orange-500',
-    'Formación': 'border-emerald-500',
-    'Automatización': 'border-purple-500',
-};
 
-const CourseCard: React.FC<{ course: Course }> = ({ course }) => (
-    <div className={`bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-full transform hover:-translate-y-2 transition-transform duration-300 border-t-4 ${areaColorMap[course.area] || 'border-slate-500'}`}>
-        <div className="p-6 flex-grow flex flex-col">
-            <p className="text-sm font-bold text-blue-600 mb-2">{course.area}</p>
-            <h3 className="text-xl font-bold text-slate-800 mb-3 flex-grow">{course.commercialName}</h3>
-            <div className="text-sm text-slate-500 mt-4 space-y-2">
-                <div className="flex items-center gap-2">
-                    <ClockIcon className="w-4 h-4" />
-                    <span><strong>Duración:</strong> {course.details.totalDuration} ({course.details.totalHours})</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <HashtagIcon className="w-4 h-4" />
-                    <span><strong>Código:</strong> {course.code}</span>
-                </div>
-            </div>
-        </div>
-        <div className="p-6 bg-slate-50">
-            <Link to={`/course/${course.id}`} className="group flex items-center justify-center w-full text-center bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                Ver Malla Curricular <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-        </div>
-    </div>
-);
 
 const CoursesPage: React.FC = () => {
     const location = useLocation();
@@ -87,7 +57,7 @@ const CoursesPage: React.FC = () => {
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {filteredCourses.map(course => (
-                        <CourseCard key={course.id} course={course} />
+                        <CourseCard key={course.id} course={course} variant="compact" showImage={false} />
                     ))}
                 </div>
 

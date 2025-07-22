@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { COMPANY_INFO, COURSES, GALLERY_IMAGES, COURSE_BACKGROUND_IMAGES } from '../constants';
+import { COMPANY_INFO, COURSES, GALLERY_IMAGES } from '../constants';
 import { BoltIcon, WrenchScrewdriverIcon, AcademicCapIcon, UsersIcon, PresentationChartLineIcon, ClipboardDocumentCheckIcon, CalendarDaysIcon, ArrowRightIcon, ClockIcon, HashtagIcon, ChevronLeftIcon, ChevronRightIcon, XMarkIcon, MailIcon, PhoneIcon, HandshakeIcon, SparklesIcon, GlobeAltIcon, ScaleIcon, LightBulbIcon, ArrowTrendingUpIcon } from './Icons';
+import CourseCard from './CourseCard';
 
 // Hook for scroll animations
 const useOnScreen = <T extends Element,>(options: IntersectionObserverInit): [React.RefObject<T | null>, boolean] => {
@@ -80,13 +81,13 @@ const AnimatedSection: React.FC<{children: React.ReactNode; className?: string, 
 const HeroSection = () => (
     <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center text-white text-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
-             <img src="https://images.unsplash.com/photo-1581092921462-4209197c8354?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Taller técnico de alta tecnología" className="w-full h-full object-cover opacity-20 ken-burns-effect" />
+             <img src="/assets/gallery/p16.jpg" alt="Taller técnico de alta tecnología" className="w-full h-full object-cover opacity-30 blur-sm ken-burns-effect" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent z-10"></div>
 
         <div className="relative z-20 px-4">
              <div className="overflow-hidden">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight tracking-tighter animate-[fadeInUp_0.8s_ease-out_forwards]">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight tracking-tighter text-white animate-[fadeInUp_0.8s_ease-out_forwards]">
                     {COMPANY_INFO.slogan.split(',')[0]},
                 </h1>
              </div>
@@ -184,12 +185,16 @@ const WhyUsSection = () => (
 );
 
 const CtaSection = () => (
-    <section id="cta" className="bg-blue-600 text-white bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-        <div className="container mx-auto px-6 py-20 text-center">
+    <section id="cta" className="relative bg-blue-600 text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+            <img src="/assets/gallery/p12.jpg" alt="Fondo técnico" className="w-full h-full object-cover opacity-40 blur-sm" />
+        </div>
+        <div className="absolute inset-0 bg-blue-600/30 z-10"></div>
+        <div className="container mx-auto px-6 py-20 text-center relative z-20">
              <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">¿Listo para potenciar tu futuro profesional?</h2>
-                <p className="max-w-2xl mx-auto text-blue-200 mb-8">No esperes más. El momento de invertir en tus habilidades es ahora. Contáctanos y da el primer paso.</p>
-                                                <Link to="/#contact" className="btn-secondary">
+                <p className="max-w-2xl mx-auto text-white mb-8">No esperes más. El momento de invertir en tus habilidades es ahora. Contáctanos y da el primer paso.</p>
+                                                <Link to="/contact" className="btn-secondary">
                                     Contáctanos Ahora
                                 </Link>
              </AnimatedSection>
@@ -216,21 +221,92 @@ const AboutSection = () => {
                     <p className="section-subtitle">Conoce nuestra historia, misión y los valores que nos guían hacia la excelencia en formación técnica.</p>
                 </AnimatedSection>
 
-                <div className="max-w-4xl mx-auto text-center mb-16">
-                    <p className="text-lg text-slate-600 leading-relaxed">{COMPANY_INFO.about}</p>
-                </div>
+                {/* Card Principal con Imagen y Texto */}
+                <AnimatedSection delay="100ms">
+                    <div className="max-w-6xl mx-auto mb-16">
+                        <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl shadow-2xl overflow-hidden border border-slate-200/80">
+                            <div className="grid lg:grid-cols-2 gap-0">
+                                {/* Lado Izquierdo - Imagen */}
+                                <div className="relative h-80 lg:h-full min-h-[400px]">
+                                    <img 
+                                        src="/assets/gallery/p8.jpg" 
+                                        alt="TECNIFORMACIÓN - Formación Técnica" 
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                                    <div className="absolute bottom-6 left-6 right-6">
+                                        <h3 className="text-2xl font-bold text-white mb-2">TECNIFORMACIÓN S.A.S</h3>
+                                        <p className="text-blue-200 text-sm">Formación técnica de excelencia</p>
+                                    </div>
+                                </div>
+                                
+                                {/* Lado Derecho - Texto con Comillas */}
+                                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                                    <div className="relative">
+                                        {/* Comilla de apertura */}
+                                        <div className="absolute -top-4 -left-2 text-6xl text-blue-500/30 font-serif">"</div>
+                                        
+                                        <p className="text-lg text-slate-700 leading-relaxed relative z-10 pl-8">
+                                            {COMPANY_INFO.about}
+                                        </p>
+                                        
+                                        {/* Comilla de cierre */}
+                                        <div className="text-6xl text-blue-500/30 font-serif text-right mt-4">"</div>
+                                    </div>
+                                    
+                                    <div className="mt-8 pt-6 border-t border-slate-200">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p className="font-semibold text-slate-800">Empresa Ecuatoriana</p>
+                                                <p className="text-sm text-slate-600">Cuenca, Ecuador</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </AnimatedSection>
                 
-                <div className="grid md:grid-cols-2 gap-12 mb-16">
-                    <AnimatedSection delay="100ms">
-                        <div className="bg-slate-50 p-10 rounded-xl shadow-lg border-t-4 border-blue-500">
-                            <h3 className="text-3xl font-bold text-slate-800 mb-4">Nuestra Misión</h3>
-                            <p className="text-slate-600 leading-relaxed">{COMPANY_INFO.mission}</p>
+                {/* Misión y Visión Mejoradas */}
+                <div className="grid md:grid-cols-2 gap-8 mb-16">
+                    <AnimatedSection delay="200ms">
+                        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-xl border-l-4 border-blue-500 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-800">Nuestra Misión</h3>
+                                </div>
+                                <p className="text-slate-700 leading-relaxed">{COMPANY_INFO.mission}</p>
+                            </div>
                         </div>
                     </AnimatedSection>
-                    <AnimatedSection delay="200ms">
-                        <div className="bg-slate-50 p-10 rounded-xl shadow-lg border-t-4 border-orange-500">
-                            <h3 className="text-3xl font-bold text-slate-800 mb-4">Nuestra Visión</h3>
-                            <p className="text-slate-600 leading-relaxed">{COMPANY_INFO.vision}</p>
+                    
+                    <AnimatedSection delay="300ms">
+                        <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl shadow-xl border-l-4 border-orange-500 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-slate-800">Nuestra Visión</h3>
+                                </div>
+                                <p className="text-slate-700 leading-relaxed">{COMPANY_INFO.vision}</p>
+                            </div>
                         </div>
                     </AnimatedSection>
                 </div>
@@ -267,15 +343,7 @@ const CoursesSection = () => {
         return COURSES.filter(course => course.area === activeFilter).slice(0, 8);
     }, [activeFilter]);
 
-    const getBackgroundImage = (courseArea: string) => {
-        const images = COURSE_BACKGROUND_IMAGES[courseArea as keyof typeof COURSE_BACKGROUND_IMAGES];
-        if (images && images.length > 0) {
-            // Seleccionar una imagen aleatoria de la categoría
-            const randomIndex = Math.floor(Math.random() * images.length);
-            return images[randomIndex];
-        }
-        return '/assets/gallery/p1.jpg'; // Imagen por defecto
-    };
+
 
     return (
         <section id="courses" className="py-20 bg-white">
@@ -302,62 +370,11 @@ const CoursesSection = () => {
                     ))}
                 </div>
 
-                {/* Grid de Cursos con Imagen en 1/3 Superior */}
+                {/* Grid de Cursos */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
                     {filteredCourses.map((course, index) => (
                         <AnimatedSection key={course.id} delay={`${index * 100}ms`}>
-                            <div className="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-500 h-96">
-                                {/* Imagen en 1/3 Superior */}
-                                <div className="relative h-1/3 overflow-hidden">
-                                    <div 
-                                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                        style={{ backgroundImage: `url(${getBackgroundImage(course.area)})` }}
-                                    />
-                                    {/* Overlay muy opaco para difuminar */}
-                                    <div className="absolute inset-0 bg-black/70" />
-                                    
-                                    {/* Título sobre la imagen */}
-                                    <div className="relative z-10 h-full flex items-center justify-center p-4">
-                                        <h3 className="text-lg font-bold text-white text-center leading-tight line-clamp-2">
-                                            {course.commercialName}
-                                        </h3>
-                                    </div>
-                                </div>
-                                
-                                {/* Contenido en 2/3 Inferior */}
-                                <div className="p-6 flex flex-col h-2/3">
-                                    {/* Badge de categoría */}
-                                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-4 w-fit">
-                                        {course.area}
-                                    </span>
-                                    
-                                    {/* Descripción */}
-                                    <p className="text-sm text-slate-600 mb-4 line-clamp-3 flex-grow">
-                                        {course.details.focus}
-                                    </p>
-                                    
-                                    {/* Información del Curso */}
-                                    <div className="space-y-2 mb-4">
-                                        <div className="flex items-center gap-2 text-sm text-slate-500">
-                                            <ClockIcon className="w-4 h-4 text-blue-500" />
-                                            <span>{course.details.totalDuration}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2 text-sm text-slate-500">
-                                            <HashtagIcon className="w-4 h-4 text-blue-500" />
-                                            <span>Código: {course.code}</span>
-                                        </div>
-                                    </div>
-                                    
-                                    {/* Botón */}
-                                    <Link 
-                                        to={`/course/${course.id}`} 
-                                        className="group/btn flex items-center justify-center w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-blue-700 transition-all duration-300"
-                                    >
-                                        Ver Malla Curricular 
-                                        <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                                    </Link>
-                                </div>
-                            </div>
+                            <CourseCard course={course} variant="full" showImage={true} />
                         </AnimatedSection>
                     ))}
                 </div>
@@ -464,9 +481,12 @@ const GallerySection = () => {
 
                 {/* Botón Ver Galería Completa */}
                 <div className="text-center">
-                                    <Link to="/gallery" className="btn-secondary">
-                    Ver Galería Completa
-                </Link>
+                    <Link 
+                        to="/gallery" 
+                        className="inline-flex items-center justify-center px-8 py-4 text-slate-700 font-medium rounded-full border-2 border-slate-300 hover:border-slate-400 hover:bg-slate-50 transition-all duration-300 transform hover:scale-105"
+                    >
+                        Ver Galería Completa
+                    </Link>
                 </div>
 
                 {/* Lightbox */}
@@ -621,7 +641,6 @@ const Home: React.FC = () => {
             <AboutSection />
             <CoursesSection />
             <GallerySection />
-            <ContactSection />
         </div>
     );
 };

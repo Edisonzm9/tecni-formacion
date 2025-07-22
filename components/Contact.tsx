@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { COMPANY_INFO } from '../constants';
-import { MailIcon, PhoneIcon, MapPinIcon, FacebookIcon, InstagramIcon, TikTokIcon } from './Icons';
+import { MailIcon, PhoneIcon, MapPinIcon, FacebookIcon, InstagramIcon } from './Icons';
 
 const PageHeader = ({ title, subtitle }: { title: string, subtitle: string }) => (
     <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-24 text-center text-white overflow-hidden">
@@ -155,7 +155,6 @@ Por favor, me gustaría recibir más información sobre horarios, costos y proce
     const socialLinks = [
         { name: 'Facebook', href: contact.social.facebook, icon: <FacebookIcon className="w-6 h-6" /> },
         { name: 'Instagram', href: contact.social.instagram, icon: <InstagramIcon className="w-6 h-6" /> },
-        { name: 'TikTok', href: contact.social.tiktok, icon: <TikTokIcon className="w-6 h-6" /> },
     ];
 
     return (

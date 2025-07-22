@@ -391,7 +391,7 @@ export const COMPANY_INFO = {
   contact: {
     address: "Cuenca, Ecuador",
     email: "tecniformacion.ec@gmail.com",
-    phone: "(+593) 0 960 6510 38",
+    phone: "(+593) 096 065 1038",
     whatsapp: "+593960651038",
     social: {
       facebook: "https://www.facebook.com/profile.php?id=61578419601592",

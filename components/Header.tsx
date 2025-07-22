@@ -23,7 +23,6 @@ const NavLinks = ({ isMobile, closeMenu, activeSection, scrollToSection }: {
         { name: 'Sobre Nosotros', path: '/#about', sectionId: 'about' },
         { name: 'Cursos', path: '/#courses', sectionId: 'courses' },
         { name: 'Galería', path: '/#gallery', sectionId: 'gallery' },
-        { name: 'Contacto', path: '/#contact', sectionId: 'contact' },
     ];
 
     const baseClasses = 'uppercase font-semibold tracking-wider transition-all duration-300 relative group cursor-pointer';

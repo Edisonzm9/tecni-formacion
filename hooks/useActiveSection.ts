@@ -14,7 +14,6 @@ export const useActiveSection = () => {
             { id: 'about', element: document.getElementById('about') },
             { id: 'courses', element: document.getElementById('courses') },
             { id: 'gallery', element: document.getElementById('gallery') },
-            { id: 'contact', element: document.getElementById('contact') },
         ];
 
         const handleScroll = () => {
