@@ -8,6 +8,8 @@ import About from './components/About';
 import CoursesPage from './components/Courses';
 import CourseDetail from './components/CourseDetail';
 import Contact from './components/Contact';
+import GalleryPage from './components/GalleryPage';
+import SmoothScroll from './components/SmoothScroll';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -32,10 +34,12 @@ const App: React.FC = () => {
                         <Route path="/courses" element={<CoursesPage />} />
                         <Route path="/course/:courseId" element={<CourseDetail />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/gallery" element={<GalleryPage />} />
                     </Routes>
                 </main>
                 <Footer />
                 <FloatingWhatsApp />
+                <SmoothScroll />
             </div>
         </HashRouter>
     );

@@ -49,7 +49,7 @@ const AnimatedSection: React.FC<{children: React.ReactNode; className?: string, 
 };
 
 const HeroSection = () => (
-    <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center text-white text-center bg-slate-900 overflow-hidden">
+    <section id="hero" className="relative h-[90vh] min-h-[600px] flex items-center justify-center text-white text-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 z-0">
              <img src="https://images.unsplash.com/photo-1581092921462-4209197c8354?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Taller técnico de alta tecnología" className="w-full h-full object-cover opacity-20 ken-burns-effect" />
         </div>
@@ -94,7 +94,7 @@ const AreasSection = () => {
     };
 
     return (
-        <section className="py-20 bg-white">
+        <section id="areas" className="py-20 bg-white">
             <div className="container mx-auto px-6">
                 <AnimatedSection>
                     <h2 className="section-title">Nuestras Áreas de Formación</h2>
@@ -129,7 +129,7 @@ const whyUsItems = [
 ]
 
 const WhyUsSection = () => (
-    <section className="py-20 bg-slate-50">
+    <section id="why-us" className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
             <AnimatedSection>
                 <h2 className="section-title">¿Por qué Confiar en Nosotros?</h2>
@@ -155,7 +155,7 @@ const WhyUsSection = () => (
 );
 
 const CtaSection = () => (
-    <section className="bg-blue-600 text-white bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+    <section id="cta" className="bg-blue-600 text-white bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
         <div className="container mx-auto px-6 py-20 text-center">
              <AnimatedSection>
                 <h2 className="text-3xl md:text-4xl font-extrabold mb-4">¿Listo para potenciar tu futuro profesional?</h2>

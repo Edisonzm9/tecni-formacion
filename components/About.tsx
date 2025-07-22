@@ -32,7 +32,7 @@ const About: React.FC = () => {
     ];
 
     return (
-        <div>
+        <div id="about">
             <PageHeader title="Sobre TECNIFORMACIÓN S.A.S" subtitle="Conoce nuestra historia, misión y los valores que nos guían hacia la excelencia en formación técnica." />
 
             <section className="py-20 bg-white">

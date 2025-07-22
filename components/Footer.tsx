@@ -10,6 +10,7 @@ const Footer: React.FC = () => {
         { name: 'Inicio', path: '/' },
         { name: 'Sobre Nosotros', path: '/about' },
         { name: 'Cursos', path: '/courses' },
+        { name: 'Galería', path: '/gallery' },
         { name: 'Contacto', path: '/contact' },
     ];
     
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="bg-slate-900 text-slate-300">
+        <footer id="footer" className="bg-slate-900 text-slate-300">
             <div className="container mx-auto px-6 pt-16 pb-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {/* Column 1: Brand */}
@@ -84,7 +85,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-                    <p>&copy; {new Date().getFullYear()} {name}. Todos los derechos reservados. Sitio diseñado con ❤️.</p>
+                    <p>&copy; {new Date().getFullYear()} {name}. Todos los derechos reservados. Sitio diseñado con Tessa Studio❤️.</p>
                 </div>
             </div>
         </footer>

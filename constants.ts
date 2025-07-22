@@ -192,6 +192,65 @@ export const COURSES: Course[] = [
   },
 ];
 
+export const GALLERY_IMAGES = [
+  {
+    id: '1',
+    src: '/assets/gallery/course-1.jpg',
+    alt: 'Curso de Electricidad Residencial',
+    title: 'Electricidad Residencial',
+    description: 'Instalación y mantenimiento seguro de sistemas eléctricos domiciliarios'
+  },
+  {
+    id: '2',
+    src: '/assets/gallery/course-2.jpg',
+    alt: 'Curso de Luminotecnia',
+    title: 'Luminotecnia y Variables Eléctricas',
+    description: 'Uso industrial y artístico del sistema de alumbrado'
+  },
+  {
+    id: '3',
+    src: '/assets/gallery/course-3.jpg',
+    alt: 'Redes Eléctricas - Liniero',
+    title: 'Redes Eléctricas - Liniero',
+    description: 'Formación práctica en redes eléctricas de baja y media tensión'
+  },
+  {
+    id: '4',
+    src: '/assets/gallery/course-4.jpg',
+    alt: 'Sistemas Automatizados',
+    title: 'Sistemas Automatizados',
+    description: 'Diseño e implementación de sistemas de automatización industrial'
+  },
+  {
+    id: '5',
+    src: '/assets/gallery/course-5.jpg',
+    alt: 'Arquitectura del Aprendizaje',
+    title: 'Arquitectura del Aprendizaje',
+    description: 'Diseño de programas educativos de alto impacto'
+  },
+  {
+    id: '6',
+    src: '/assets/gallery/course-6.jpg',
+    alt: 'Evaluación de Competencias',
+    title: 'Evaluación de Competencias',
+    description: 'Técnicas modernas de evaluación por competencias'
+  },
+  {
+    id: '7',
+    src: '/assets/gallery/course-7.jpg',
+    alt: 'Formación de Instructores',
+    title: 'Formación de Instructores',
+    description: 'Herramientas para instructores del siglo XXI'
+  },
+  {
+    id: '8',
+    src: '/assets/gallery/course-8.jpg',
+    alt: 'Diagnóstico Automotriz',
+    title: 'Diagnóstico Automotriz',
+    description: 'Sistemas eléctricos y electrónicos del vehículo'
+  }
+];
+
 export const COMPANY_INFO = {
   name: "TECNIFORMACIÓN S.A.S",
   slogan: "Formamos habilidades, certificamos tu futuro.",

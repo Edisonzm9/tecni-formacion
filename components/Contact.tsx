@@ -56,17 +56,8 @@ const Contact: React.FC = () => {
                 focus: focus || undefined
             });
 
-            // Pre-llenar el mensaje con información del curso
-            const defaultMessage = `Hola, estoy interesado en inscribirme en el curso: ${course}
-
-Información del curso:
-• Área: ${area}
-• Instructor: ${instructor}
-• Duración: ${duration}
-• Horas: ${hours}
-• Enfoque: ${focus}
-
-Por favor, me gustaría recibir más información sobre horarios, costos y proceso de inscripción.`;
+            // Pre-llenar el mensaje con un mensaje simple
+            const defaultMessage = `Hola, me gustaría recibir más información sobre horarios, costos y proceso de inscripción.`;
 
             setFormData(prev => ({
                 ...prev,
@@ -84,25 +75,32 @@ Por favor, me gustaría recibir más información sobre horarios, costos y proce
     };
 
     const generateWhatsAppMessage = () => {
-        return `Hola, soy ${formData.name} y estoy interesado en inscribirme en el curso: ${courseInfo?.course || 'Formación Técnica'}
+        const baseMessage = `Hola, soy ${formData.name} y estoy interesado en inscribirme en el curso: ${courseInfo?.course || 'Formación Técnica'}
 
 Mis datos de contacto:
 • Nombre: ${formData.name}
 • Email: ${formData.email}
-• Teléfono: ${formData.phone}
+• Teléfono: ${formData.phone}`;
 
-${courseInfo ? `
+        const courseInfoSection = courseInfo ? `
+
 Información del curso:
 • Área: ${courseInfo.area}
 • Instructor: ${courseInfo.instructor}
 • Duración: ${courseInfo.duration}
 • Horas: ${courseInfo.hours}
-• Enfoque: ${courseInfo.focus}
-` : ''}
+• Enfoque: ${courseInfo.focus}` : '';
 
-Mensaje adicional: ${formData.message}
+        const defaultMessage = 'Hola, me gustaría recibir más información sobre horarios, costos y proceso de inscripción.';
+        const additionalMessage = formData.message && formData.message !== defaultMessage ? `
+
+Mensaje adicional: ${formData.message}` : '';
+
+        const closingMessage = `
 
 Por favor, me gustaría recibir más información sobre horarios, costos y proceso de inscripción.`;
+
+        return baseMessage + courseInfoSection + additionalMessage + closingMessage;
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -132,7 +130,7 @@ Por favor, me gustaría recibir más información sobre horarios, costos y proce
     ];
 
     return (
-        <div>
+        <div id="contact">
             <PageHeader 
                 title={courseInfo ? "Inscripción al Curso" : "Ponte en Contacto"} 
                 subtitle={courseInfo 

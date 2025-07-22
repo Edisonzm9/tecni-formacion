@@ -65,7 +65,7 @@ const CoursesPage: React.FC = () => {
     }, [activeFilter]);
 
     return (
-        <div>
+        <div id="courses">
             <PageHeader title="Todos Nuestros Cursos" subtitle="Encuentra la formación técnica ideal para ti y da el siguiente paso en tu carrera profesional." />
             
             <div className="container mx-auto px-6 py-20">

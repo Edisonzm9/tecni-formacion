@@ -7,6 +7,7 @@ const NavLinks = ({ isMobile, closeMenu }: { isMobile?: boolean, closeMenu?: () 
         { name: 'Inicio', path: '/' },
         { name: 'Sobre Nosotros', path: '/about' },
         { name: 'Cursos', path: '/courses' },
+        { name: 'Galería', path: '/gallery' },
         { name: 'Contacto', path: '/contact' },
     ];
 
@@ -58,7 +59,7 @@ const Header: React.FC = () => {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-sm' : 'bg-transparent'}`}>
+        <header id="header" className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 shadow-lg backdrop-blur-sm' : 'bg-transparent'}`}>
             <nav className="container mx-auto px-6">
                 <div className="flex items-center justify-between h-20">
                     <NavLink to="/" onClick={closeMenu}>
