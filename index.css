@@ -1,0 +1,296 @@
+/* Estilos adicionales para el formulario y elementos interactivos */
+
+/* Estilos para campos de formulario con estado de error */
+.form-input-error {
+    @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+}
+
+.form-error-message {
+    @apply text-red-600 text-sm mt-1;
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    @apply bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2;
+}
+
+/* Animación de carga para el botón */
+.button-loading {
+    @apply opacity-75 cursor-not-allowed;
+}
+
+/* Estilos para la información del curso */
+.course-info-card {
+    @apply bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4;
+}
+
+/* Estilos para mensajes de éxito */
+.success-message {
+    @apply bg-green-50 border border-green-200 text-green-800 rounded-lg p-4 mb-4;
+}
+
+/* Estilos para mensajes de error */
+.error-message {
+    @apply bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-4;
+}
+
+/* Estilos para tooltips */
+.tooltip {
+    @apply relative inline-block;
+}
+
+.tooltip .tooltip-text {
+    @apply invisible absolute z-10 py-2 px-3 text-sm text-white bg-gray-900 rounded-lg opacity-0 transition-opacity duration-300;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltip-text {
+    @apply visible opacity-100;
+}
+
+/* Estilos para campos requeridos */
+.required-field::after {
+    content: " *";
+    color: #ef4444;
+}
+
+/* Estilos para el formulario responsivo */
+@media (max-width: 768px) {
+    .form-grid {
+        @apply grid-cols-1;
+    }
+}
+
+/* Estilos para animaciones de entrada */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el botón de envío con estado de carga */
+.submit-button-loading {
+    @apply relative;
+}
+
+.submit-button-loading::after {
+    content: "";
+    @apply absolute top-1/2 left-1/2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilos mejorados para el mensaje de WhatsApp - Simulando una ventana de WhatsApp */
+.whatsapp-message-preview {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    border: 2px solid #128C7E;
+    position: relative;
+}
+
+.whatsapp-message-preview::before {
+    content: "💬 WhatsApp";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #25D366;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* Estilos mejorados para los botones */
+.cta-button {
+    @apply inline-block font-bold py-4 px-8 rounded-full uppercase tracking-wider shadow-lg transform transition-all duration-300;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+    color: white;
+    @apply hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-orange-300;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button-secondary {
+    @apply inline-block font-bold py-4 px-8 rounded-full uppercase tracking-wider shadow-lg transform transition-all duration-300;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    @apply hover:scale-105 hover:shadow-xl hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-blue-200;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button-secondary:hover::before {
+    left: 100%;
+}
+
+/* Botón específico para WhatsApp */
+.whatsapp-send-button {
+    @apply inline-block font-bold py-4 px-8 rounded-full uppercase tracking-wider shadow-lg transform transition-all duration-300;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    @apply hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-300;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-send-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.whatsapp-send-button:hover::before {
+    left: 100%;
+}
+
+/* Estilos para el contenedor de la vista previa */
+.preview-container {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el título de la vista previa */
+.preview-title {
+    @apply font-bold text-slate-700 mb-4;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 18px;
+}
+
+/* Estilos para el scrollbar personalizado */
+.whatsapp-message-preview::-webkit-scrollbar {
+    width: 8px;
+}
+
+.whatsapp-message-preview::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.whatsapp-message-preview::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.whatsapp-message-preview::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animación de pulso para el botón de WhatsApp */
+@keyframes pulse-whatsapp {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-send-button {
+    animation: pulse-whatsapp 2s infinite;
+}
+
+/* Estilos para el icono de WhatsApp en el botón */
+.whatsapp-icon {
+    @apply inline-block w-5 h-5 mr-2;
+    filter: brightness(0) invert(1);
+}
+
+/* Estilos para el contenedor de botones */
+.button-container {
+    @apply flex gap-4;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para los grupos de campos del formulario */
+.form-field-group {
+    @apply relative;
+}
+
+.form-field-group label {
+    @apply flex items-center;
+}
+
+/* Animación para los campos del formulario */
+.form-field-group input:focus,
+.form-field-group textarea:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Estilos para el placeholder */
+.form-field-group input::placeholder,
+.form-field-group textarea::placeholder {
+    @apply text-slate-400;
+    transition: all 0.3s ease;
+}
+
+.form-field-group input:focus::placeholder,
+.form-field-group textarea:focus::placeholder {
+    @apply text-slate-300;
+    transform: translateX(5px);
+} 
