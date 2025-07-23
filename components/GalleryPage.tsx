@@ -1,93 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon, XMarkIcon } from './Icons';
+import { GALLERY_IMAGES } from '../constants';
 
-// Imágenes de la galería - completamente independientes de los cursos
-const GALLERY_IMAGES = [
-  {
-    id: '1',
-    src: '/assets/gallery/p1.jpg',
-    alt: 'Trabajo en equipo técnico',
-    title: 'Colaboración y Excelencia',
-    description: 'Nuestros estudiantes trabajan en equipo para desarrollar proyectos técnicos innovadores.'
-  },
-  {
-    id: '2',
-    src: '/assets/gallery/p2.jpg',
-    alt: 'Laboratorio de prácticas',
-    title: 'Aprendizaje Práctico',
-    description: 'Instalaciones modernas equipadas con la última tecnología para formación práctica.'
-  },
-  {
-    id: '3',
-    src: '/assets/gallery/p3.jpg',
-    alt: 'Instructor enseñando',
-    title: 'Docentes Expertos',
-    description: 'Profesionales con amplia experiencia compartiendo conocimientos con nuestros estudiantes.'
-  },
-  {
-    id: '4',
-    src: '/assets/gallery/p4.jpg',
-    alt: 'Equipos técnicos',
-    title: 'Tecnología de Vanguardia',
-    description: 'Acceso a equipos y herramientas de última generación para una formación de calidad.'
-  },
-  {
-    id: '5',
-    src: '/assets/gallery/p5.jpg',
-    alt: 'Estudiante concentrado',
-    title: 'Enfoque en la Excelencia',
-    description: 'Cada estudiante recibe atención personalizada para maximizar su potencial.'
-  },
-  {
-    id: '6',
-    src: '/assets/gallery/p6.jpg',
-    alt: 'Proyecto en desarrollo',
-    title: 'Proyectos Reales',
-    description: 'Desarrollo de proyectos reales que preparan para el mundo laboral.'
-  },
-  {
-    id: '7',
-    src: '/assets/gallery/p7.jpg',
-    alt: 'Certificación',
-    title: 'Certificación Profesional',
-    description: 'Programas que culminan en certificaciones reconocidas por el sector.'
-  },
-  {
-    id: '8',
-    src: '/assets/gallery/p8.jpg',
-    alt: 'Graduación',
-    title: 'Éxito Profesional',
-    description: 'Nuestros graduados alcanzan posiciones destacadas en sus campos.'
-  },
-  {
-    id: '9',
-    src: '/assets/gallery/p9.jpg',
-    alt: 'Innovación tecnológica',
-    title: 'Innovación Constante',
-    description: 'Mantenemos nuestros programas actualizados con las últimas tendencias tecnológicas.'
-  },
-  {
-    id: '10',
-    src: '/assets/gallery/p10.jpg',
-    alt: 'Comunidad estudiantil',
-    title: 'Comunidad de Aprendizaje',
-    description: 'Una comunidad diversa de estudiantes apasionados por la tecnología.'
-  },
-  {
-    id: '11',
-    src: '/assets/gallery/p11.jpg',
-    alt: 'Desarrollo de habilidades',
-    title: 'Desarrollo Integral',
-    description: 'Formación que combina habilidades técnicas y competencias profesionales.'
-  },
-  {
-    id: '12',
-    src: '/assets/gallery/p12.jpg',
-    alt: 'Futuro profesional',
-    title: 'Construyendo Futuros',
-    description: 'Preparamos a nuestros estudiantes para los desafíos del mañana.'
-  }
-];
+// Eliminar el arreglo local GALLERY_IMAGES
 
 const GalleryPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<any>(null);
@@ -194,7 +109,7 @@ const GalleryPage: React.FC = () => {
                     {/* Overlay de información */}
                     <div className="absolute inset-0 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="text-white">
-                        <h3 className="text-xl font-semibold mb-2">{image.title}</h3>
+                        <h3 className="text-xl font-semibold mb-2">{image.title || image.alt}</h3>
                         <p className="text-sm text-slate-200 leading-relaxed">{image.description}</p>
                       </div>
                     </div>
@@ -248,7 +163,7 @@ const GalleryPage: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8 rounded-b-lg">
                 <div className="max-w-4xl mx-auto">
                   <h3 className="text-white text-2xl font-semibold mb-3">
-                    {selectedImage.title}
+                    {selectedImage.title || selectedImage.alt}
                   </h3>
                   <p className="text-slate-200 text-lg leading-relaxed mb-4">
                     {selectedImage.description}

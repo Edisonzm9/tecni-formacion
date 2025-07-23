@@ -9,7 +9,7 @@ export interface Course {
   id: string;
   commercialName: string;
   code: string;
-  area: 'Eléctrica' | 'Mecánica' | 'Formación' | 'Automatización';
+  area: 'Eléctrica' | 'Mecánica' | 'Formación Transversal' | 'Industrial';
   instructor: string;
   details: {
     totalDuration: string;

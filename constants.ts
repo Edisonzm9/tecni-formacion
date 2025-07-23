@@ -6,7 +6,7 @@ export const COURSES: Course[] = [
   {
     id: 'electricidad-residencial',
     commercialName: 'Electricidad Residencial: Instalación y Mantenimiento Seguro',
-    code: 'K.1',
+    code: 'K1',
     area: 'Eléctrica',
     instructor: 'ING. DIEGO ARMANDO BALAREZO LÓPEZ',
     details: {
@@ -23,7 +23,7 @@ export const COURSES: Course[] = [
   {
     id: 'luminotecnia-variables-electricas',
     commercialName: 'Curso Técnico en Luminotecnia y Variables Eléctricas',
-    code: 'K.6',
+    code: 'K6',
     area: 'Eléctrica',
     instructor: 'ING. DIEGO ARMANDO BALAREZO LÓPEZ',
     details: {
@@ -40,12 +40,12 @@ export const COURSES: Course[] = [
   {
     id: 'redes-electricas-liniero',
     commercialName: 'Curso de Capacitación Técnica en Redes Eléctricas - Liniero Eléctrico',
-    code: 'K.8',
+    code: 'K8',
     area: 'Eléctrica',
     instructor: 'ING. DIEGO ARMANDO BALAREZO LÓPEZ',
     details: {
       totalDuration: '1.5 meses',
-      frequency: '3 vez por semana',
+      frequency: '3 veces por semana',
       sessionDuration: '4 horas académicas',
       totalHours: '44 horas (11 sesiones x 4 horas)',
       focus: 'Formación predominantemente práctica en redes eléctricas de baja y media tensión.'
@@ -64,8 +64,8 @@ export const COURSES: Course[] = [
   {
     id: 'sistemas-automatizados',
     commercialName: 'Sistemas Automatizados',
-    code: 'P.4',
-    area: 'Automatización',
+    code: 'P4',
+    area: 'Eléctrica',
     instructor: 'ING. DIEGO ARMANDO BALAREZO LÓPEZ',
     details: {
         totalDuration: '2 meses',
@@ -82,8 +82,8 @@ export const COURSES: Course[] = [
   {
     id: 'arquitectura-aprendizaje',
     commercialName: 'Arquitectura del Aprendizaje: Diseña Programas Educativos de Alto Impacto',
-    code: 'J.1',
-    area: 'Formación',
+    code: 'J1',
+    area: 'Formación Transversal',
     instructor: 'LCD. JUAN RIVERA TORRES',
     details: {
         totalDuration: '1 mes',
@@ -99,8 +99,8 @@ export const COURSES: Course[] = [
   {
     id: 'evaluacion-competencias',
     commercialName: 'Más Allá de la Calificación: Técnicas Modernas de Evaluación de Competencias',
-    code: 'J.3',
-    area: 'Formación',
+    code: 'J3',
+    area: 'Formación Transversal',
     instructor: 'LCD. JUAN RIVERA TORRES',
     details: {
         totalDuration: '1 mes',
@@ -116,8 +116,8 @@ export const COURSES: Course[] = [
   {
     id: 'formacion-instructores',
     commercialName: 'Lidera el Aprendizaje: Herramientas para Instructores y Capacitadores del Siglo XXI',
-    code: 'J.4',
-    area: 'Formación',
+    code: 'J4',
+    area: 'Formación Transversal',
     instructor: 'LCD. JUAN RIVERA TORRES',
     details: {
         totalDuration: '1.5 meses',
@@ -134,8 +134,8 @@ export const COURSES: Course[] = [
   {
     id: 'diagnostico-sistemas-electricos-vehiculo',
     commercialName: 'Diagnóstico y reparación de Sistemas eléctricos y electrónicos del vehículo',
-    code: 'K.2',
-    area: 'Eléctrica',
+    code: 'K2',
+    area: 'Mecánica',
     instructor: 'ING. LUIS SARATE NAULA',
     details: {
         totalDuration: '1.5 meses',
@@ -151,7 +151,7 @@ export const COURSES: Course[] = [
   {
     id: 'diagnostico-sistemas-automotrices',
     commercialName: 'Diagnóstico y reparación de sistemas automotrices',
-    code: 'N.5',
+    code: 'N5',
     area: 'Mecánica',
     instructor: 'ING. LUIS SARATE NAULA',
     details: {
@@ -168,12 +168,12 @@ export const COURSES: Course[] = [
   {
     id: 'tecnico-soldadura-electrica',
     commercialName: 'Técnico en soldadura electrica',
-    code: 'O.12',
-    area: 'Mecánica',
+    code: 'O12',
+    area: 'Industrial',
     instructor: 'ING. LUIS SARATE NAULA',
     details: {
       totalDuration: '1 mes',
-      frequency: '3 vez por semana',
+      frequency: '3 veces por semana',
       sessionDuration: '4 horas académicas',
       totalHours: '48 horas (12 sesiones)',
       focus: 'Teórico-práctico centrado en el dominio de técnicas de soldadura eléctrica por arco, manejo de herramientas, lectura de planos y seguridad industrial.'
@@ -223,7 +223,7 @@ export const GALLERY_IMAGES = [
     alt: 'Sistemas Automatizados',
     title: 'Sistemas Automatizados',
     description: 'Diseño e implementación de sistemas de automatización industrial',
-    category: 'Automatización'
+    category: 'Eléctrica'
   },
   {
     id: '5',
@@ -231,7 +231,7 @@ export const GALLERY_IMAGES = [
     alt: 'Arquitectura del Aprendizaje',
     title: 'Arquitectura del Aprendizaje',
     description: 'Diseño de programas educativos de alto impacto',
-    category: 'Formación'
+    category: 'Formación Transversal'
   },
   {
     id: '6',
@@ -239,7 +239,7 @@ export const GALLERY_IMAGES = [
     alt: 'Evaluación de Competencias',
     title: 'Evaluación de Competencias',
     description: 'Técnicas modernas de evaluación por competencias',
-    category: 'Formación'
+    category: 'Formación Transversal'
   },
   {
     id: '7',
@@ -247,7 +247,7 @@ export const GALLERY_IMAGES = [
     alt: 'Formación de Instructores',
     title: 'Formación de Instructores',
     description: 'Herramientas para instructores del siglo XXI',
-    category: 'Formación'
+    category: 'Formación Transversal'
   },
   {
     id: '8',
@@ -271,7 +271,7 @@ export const GALLERY_IMAGES = [
     alt: 'Técnico en Soldadura Eléctrica',
     title: 'Técnico en Soldadura Eléctrica',
     description: 'Dominio de técnicas de soldadura eléctrica por arco',
-    category: 'Mecánica'
+    category: 'Industrial'
   },
   {
     id: '11',
@@ -295,7 +295,7 @@ export const GALLERY_IMAGES = [
     alt: 'Controladores Lógicos Programables',
     title: 'Controladores Lógicos Programables',
     description: 'Programación en Ladder y comunicación industrial',
-    category: 'Automatización'
+    category: 'Eléctrica'
   },
   {
     id: '14',
@@ -303,7 +303,7 @@ export const GALLERY_IMAGES = [
     alt: 'Robótica Industrial',
     title: 'Robótica Industrial',
     description: 'Programación de robots e integración de sistemas',
-    category: 'Automatización'
+    category: 'Eléctrica'
   },
   {
     id: '15',
@@ -311,7 +311,7 @@ export const GALLERY_IMAGES = [
     alt: 'Evaluación por Competencias',
     title: 'Evaluación por Competencias',
     description: 'Diseño de rúbricas y listas de cotejo',
-    category: 'Formación'
+    category: 'Formación Transversal'
   },
   {
     id: '16',
@@ -319,7 +319,7 @@ export const GALLERY_IMAGES = [
     alt: 'Tecnología Educativa',
     title: 'Tecnología Educativa',
     description: 'Plataformas LMS y herramientas de colaboración',
-    category: 'Formación'
+    category: 'Formación Transversal'
   },
   {
     id: '17',
@@ -336,6 +336,46 @@ export const GALLERY_IMAGES = [
     title: 'Proyectos Finales',
     description: 'Aplicación de técnicas aprendidas en proyectos reales',
     category: 'General'
+  },
+  {
+    id: '19',
+    src: '/assets/gallery/t1.jpg',
+    alt: 'Formación Técnica Práctica',
+    title: 'Formación Técnica Práctica',
+    description: 'Estudiantes aplicando conocimientos técnicos en laboratorio',
+    category: 'General'
+  },
+  {
+    id: '20',
+    src: '/assets/gallery/t2.jpg',
+    alt: 'Trabajo de Campo',
+    title: 'Trabajo de Campo',
+    description: 'Prácticas profesionales en entorno real de trabajo',
+    category: 'Eléctrica'
+  },
+  {
+    id: '21',
+    src: '/assets/gallery/t3.jpg',
+    alt: 'Capacitación Especializada',
+    title: 'Capacitación Especializada',
+    description: 'Formación avanzada con equipos especializados',
+    category: 'Industrial'
+  },
+  {
+    id: '22',
+    src: '/assets/gallery/t4.jpg',
+    alt: 'Certificación Profesional',
+    title: 'Certificación Profesional',
+    description: 'Proceso de evaluación y certificación de competencias',
+    category: 'Formación Transversal'
+  },
+  {
+    id: '23',
+    src: '/assets/gallery/t5.jpg',
+    alt: 'Innovación Tecnológica',
+    title: 'Innovación Tecnológica',
+    description: 'Aplicación de nuevas tecnologías en formación técnica',
+    category: 'Eléctrica'
   }
 ];
 

@@ -334,7 +334,7 @@ const AboutSection = () => {
 // Sección de Cursos
 const CoursesSection = () => {
     const [activeFilter, setActiveFilter] = useState<string>('Todos');
-    const courseAreas = ['Todos', 'Eléctrica', 'Mecánica', 'Formación', 'Automatización'];
+    const courseAreas = ['Todos', 'Eléctrica', 'Mecánica', 'Formación Transversal', 'Industrial'];
 
     const filteredCourses = useMemo(() => {
         if (activeFilter === 'Todos') {
@@ -453,7 +453,7 @@ const GallerySection = () => {
 
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-                    {GALLERY_IMAGES.slice(0, 8).map((image, index) => (
+                    {GALLERY_IMAGES.slice(0, 12).map((image, index) => (
                         <AnimatedSection key={image.id} delay={`${index * 100}ms`}>
                             <div
                                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"

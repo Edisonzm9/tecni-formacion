@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Cache control for assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</FilesMatch> 

@@ -67,8 +67,9 @@ const Footer: React.FC = () => {
                         <ul className="space-y-3">
                             <li><Link to="/courses" state={{ filter: 'Eléctrica' }} className="hover:text-orange-400 transition-colors duration-300 text-slate-400">Área Eléctrica</Link></li>
                             <li><Link to="/courses" state={{ filter: 'Mecánica' }} className="hover:text-orange-400 transition-colors duration-300 text-slate-400">Área Mecánica</Link></li>
-                            <li><Link to="/courses" state={{ filter: 'Formación' }} className="hover:text-orange-400 transition-colors duration-300 text-slate-400">Área de Formación</Link></li>
-                             <li><Link to="/courses" state={{ filter: 'Automatización' }} className="hover:text-orange-400 transition-colors duration-300 text-slate-400">Automatización</Link></li>
+                            <li><Link to="/courses" state={{ filter: 'Formación Transversal' }} className="hover:text-orange-400 transition-colors duration-300 text-slate-400">Área de Formación Transversal</Link></li>
+                            <li><Link to="/courses" state={{ filter: 'Industrial' }} className="hover:text-orange-400 transition-colors duration-300 text-slate-400">Área Industrial</Link></li>
+
                         </ul>
                     </div>
 

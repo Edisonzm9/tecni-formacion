@@ -19,7 +19,7 @@ const CoursesPage: React.FC = () => {
     const initialFilter = location.state?.filter || 'Todos';
     const [activeFilter, setActiveFilter] = useState<string>(initialFilter);
     
-    const courseAreas = ['Todos', 'Eléctrica', 'Mecánica', 'Formación', 'Automatización'];
+    const courseAreas = ['Todos', 'Eléctrica', 'Mecánica', 'Formación Transversal', 'Industrial'];
 
     useEffect(() => {
         if(location.state?.filter) {

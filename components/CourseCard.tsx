@@ -12,8 +12,9 @@ interface CourseCardProps {
 const areaColorMap: { [key: string]: string } = {
     'Eléctrica': 'border-blue-500',
     'Mecánica': 'border-orange-500',
-    'Formación': 'border-emerald-500',
-    'Automatización': 'border-purple-500',
+    'Formación Transversal': 'border-emerald-500',
+    'Industrial': 'border-purple-500',
+
 };
 
 // Mapeo específico de imágenes para cada curso
