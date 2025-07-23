@@ -108,7 +108,9 @@ const Header: React.FC = () => {
                             scrollToSection={scrollToSection}
                         />
                         <a 
-                            href="#aula-virtual" 
+                            href="https://aula.tecniformacion.es" 
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-sm font-semibold border-2 border-orange-500 text-orange-500 rounded-full py-2 px-6 hover:bg-orange-500 hover:text-white transition-all duration-300"
                         >
                             Aula Virtual
@@ -141,7 +143,9 @@ const Header: React.FC = () => {
                         scrollToSection={scrollToSection}
                     />
                     <a 
-                        href="#aula-virtual" 
+                        href="https://aula.tecniformacion.es" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={closeMenu} 
                         className="cta-button mt-6"
                     >
